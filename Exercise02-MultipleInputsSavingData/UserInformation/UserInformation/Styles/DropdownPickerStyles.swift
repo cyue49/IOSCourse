@@ -11,6 +11,10 @@ struct DropdownPickerStyle1: View {
                 Text($0)
             }
         }
+        .background(
+            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                .stroke(Color("PrimaryAccentColor"), lineWidth: 1))
+        .tint(Color("PrimaryTextColor"))
     }
 }
 
