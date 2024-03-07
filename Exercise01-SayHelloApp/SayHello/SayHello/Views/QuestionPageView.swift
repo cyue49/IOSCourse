@@ -1,34 +1,44 @@
 import SwiftUI
 
 struct QuestionPageView: View {
-    @State private var name:String = ""
-    @State private var welcomeMessage:String = ""
+    @State var name:String = ""
+    @State var welcomeMessage:String = ""
+    @State var welcomeLabelMessage:String = ""
+    
+    @State private var showAlert = false
     
     var body: some View {
-        VStack (spacing: 25) {
+        NavigationStack {
             VStack (alignment: .leading, spacing: 25) {
                 Text("What is your name?")
                 TextFieldStyle1(placeholder: "What is your name?", textValue: $name)
                 
                 ButtonStyle1(text: "Say Hello with Label") {
-                    welcomeMessage = "Hello \(name)! Welcome to SayHello App!"
+                    welcomeLabelMessage = "Hello \(name)! Welcome to SayHello App!"
                 }
                 
-                ButtonStyle1(text: "Say Hello with Separate View") {
-                    welcomeMessage = ""
+                NavigationLink(destination: WelcomeView(welcomeMessage: $welcomeMessage).onAppear() {
+                    welcomeLabelMessage = ""
+                    welcomeMessage = "Hello \(name)! Welcome to SayHello App!"
+                }) {
+                    TextButtonStyle1(text: "Say Hello with a Separate View")
                 }
                 
                 ButtonStyle1(text: "Say Hello with Dialog Box") {
-                    welcomeMessage = ""
+                    welcomeLabelMessage = ""
+                    welcomeMessage = "Hello \(name)! Welcome to SayHello App!"
+                    showAlert = true
                 }
+                .alert(welcomeMessage, isPresented: $showAlert) {
+                    Button("Ok", role: .cancel) {}
+                }
+                
+                Text(welcomeLabelMessage)
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-            
-            Text(welcomeMessage)
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            .padding(20)
             Spacer()
         }
-        .padding(20)
     }
 }
 
