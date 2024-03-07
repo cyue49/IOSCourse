@@ -19,6 +19,7 @@
 		78CFE0C72B9A15A700E39271 /* CheckboxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFE0C62B9A15A700E39271 /* CheckboxStyles.swift */; };
 		78CFE0CA2B9A317600E39271 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFE0C92B9A317600E39271 /* User.swift */; };
 		78CFE0CE2B9A67EA00E39271 /* RadioButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFE0CD2B9A67EA00E39271 /* RadioButtonStyles.swift */; };
+		78CFE0D12B9A82D800E39271 /* DropdownPickerStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFE0D02B9A82D800E39271 /* DropdownPickerStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		78CFE0C62B9A15A700E39271 /* CheckboxStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyles.swift; sourceTree = "<group>"; };
 		78CFE0C92B9A317600E39271 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		78CFE0CD2B9A67EA00E39271 /* RadioButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonStyles.swift; sourceTree = "<group>"; };
+		78CFE0D02B9A82D800E39271 /* DropdownPickerStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownPickerStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				78CFE0C22B9A092400E39271 /* ButtonStyles.swift */,
 				78CFE0C62B9A15A700E39271 /* CheckboxStyles.swift */,
 				78CFE0CD2B9A67EA00E39271 /* RadioButtonStyles.swift */,
+				78CFE0D02B9A82D800E39271 /* DropdownPickerStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				78CFE0C72B9A15A700E39271 /* CheckboxStyles.swift in Sources */,
 				78CFE0C12B9A073A00E39271 /* FormPageView.swift in Sources */,
 				78CFE0CA2B9A317600E39271 /* User.swift in Sources */,
+				78CFE0D12B9A82D800E39271 /* DropdownPickerStyles.swift in Sources */,
 				78CFE0C32B9A092400E39271 /* ButtonStyles.swift in Sources */,
 				78CFE0BF2B9A06E200E39271 /* TextFieldStyles.swift in Sources */,
 				78CFE0932B9A053E00E39271 /* UserInformationApp.swift in Sources */,

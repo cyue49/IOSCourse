@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct FormPageView: View {
-    @State var name = ""
     @State var user: User = User()
     
     var body: some View {
@@ -19,6 +18,8 @@ struct FormPageView: View {
             CheckboxStyle1(label: "Other", checked: $user.likesOther)
         ]
         
+        let continents = ["North America", "South America", "Asia", "Africa", "Europe", "Australia"]
+        
         let columns = [
             GridItem(.flexible()),
             GridItem(.flexible())
@@ -27,7 +28,7 @@ struct FormPageView: View {
         NavigationStack {
             VStack (alignment: .leading, spacing: 25) {
                 Text("What is your name? (2-20 characters)")
-                TextFieldStyle1(placeholder: "Please enter your name", textValue: $name)
+                TextFieldStyle1(placeholder: "Please enter your name", textValue: $user.name)
                 
                 Text("What is your age range?")
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 20) {
@@ -48,6 +49,7 @@ struct FormPageView: View {
                 // Text(user.likesCats ? "Yes" : "No")
                 
                 Text("Choose your continent of residence:")
+                DropdownPickerStyle1(label: "Continent of Residence", options: continents, selected: $user.continent)
                 
                 Text("What is your preferred temperature in celcuius?")
                 
