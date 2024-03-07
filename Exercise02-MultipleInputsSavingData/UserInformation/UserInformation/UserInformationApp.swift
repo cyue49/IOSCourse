@@ -1,10 +1,10 @@
 import SwiftUI
 
 @main
-struct SayHelloApp: App {
+struct UserInformationApp: App {
     var body: some Scene {
         WindowGroup {
-            QuestionPageView()
+            FormPageView()
         }
     }
 }
