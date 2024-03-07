@@ -2,36 +2,33 @@ import SwiftUI
 
 struct QuestionPageView: View {
     @State private var name:String = ""
-    @State private var welcomeMessage:String = "test"
+    @State private var welcomeMessage:String = ""
     
     var body: some View {
-        VStack {
-            VStack (alignment: .leading) {
+        VStack (spacing: 25) {
+            VStack (alignment: .leading, spacing: 25) {
                 Text("What is your name?")
-                TextField("Please enter your name", text: $name)
-                    .padding(10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15, style: .continuous)
-                            .stroke(Color.gray, lineWidth: 1))
+                TextFieldStyle1(placeholder: "What is your name?", textValue: $name)
                 
                 ButtonStyle1(text: "Say Hello with Label") {
                     welcomeMessage = "Hello \(name)! Welcome to SayHello App!"
                 }
                 
                 ButtonStyle1(text: "Say Hello with Separate View") {
-                    // todo
+                    welcomeMessage = ""
                 }
                 
                 ButtonStyle1(text: "Say Hello with Dialog Box") {
-                    // todo
+                    welcomeMessage = ""
                 }
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             
             Text(welcomeMessage)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             Spacer()
         }
-        .padding()
+        .padding(20)
     }
 }
 

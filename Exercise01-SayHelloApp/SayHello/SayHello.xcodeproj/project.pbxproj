@@ -16,6 +16,7 @@
 		78B56E302B9937EE0058F249 /* QuestionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B56E2F2B9937EE0058F249 /* QuestionPageView.swift */; };
 		78B56E322B994F3C0058F249 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B56E312B994F3C0058F249 /* WelcomeView.swift */; };
 		78B56E362B9950700058F249 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B56E352B9950700058F249 /* ButtonStyles.swift */; };
+		78B56E3A2B995C570058F249 /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B56E392B995C570058F249 /* TextFieldStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		78B56E2F2B9937EE0058F249 /* QuestionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageView.swift; sourceTree = "<group>"; };
 		78B56E312B994F3C0058F249 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		78B56E352B9950700058F249 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		78B56E392B995C570058F249 /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				78B56E352B9950700058F249 /* ButtonStyles.swift */,
+				78B56E392B995C570058F249 /* TextFieldStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B56E052B99376B0058F249 /* SayHelloApp.swift in Sources */,
+				78B56E3A2B995C570058F249 /* TextFieldStyles.swift in Sources */,
 				78B56E362B9950700058F249 /* ButtonStyles.swift in Sources */,
 				78B56E322B994F3C0058F249 /* WelcomeView.swift in Sources */,
 				78B56E302B9937EE0058F249 /* QuestionPageView.swift in Sources */,
