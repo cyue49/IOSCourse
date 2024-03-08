@@ -30,3 +30,9 @@ struct TextButtonStyle1: View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
+
+struct ButtonStyles_Previews: PreviewProvider {
+    static var previews: some View {
+        ButtonStyle1(text: "Button", clicked: {})
+    }
+}

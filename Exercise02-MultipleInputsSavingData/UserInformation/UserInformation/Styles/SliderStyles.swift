@@ -7,14 +7,17 @@ struct SliderStyle1: View {
     var step: Double
     
     var body: some View {
-        Slider(value: $value, in: minValue...maxValue, step: step) {
-            Text("\(value)")
-        } minimumValueLabel: {
-            Text(String(Int(minValue)))
-        } maximumValueLabel: {
-            Text(String(Int(maxValue)))
+        VStack (spacing: 15) {
+            Slider(value: $value, in: minValue...maxValue, step: step) {
+            } minimumValueLabel: {
+                Text(String(Int(minValue)))
+            } maximumValueLabel: {
+                Text(String(Int(maxValue)))
+            }
+            .tint(Color("PrimaryAccentColor"))
+            Text("\(Int(value))")
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         }
-        .tint(Color("PrimaryAccentColor"))
     }
 }
 

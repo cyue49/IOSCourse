@@ -12,3 +12,9 @@ struct TextFieldStyle1: View {
                     .stroke(Color("PrimaryAccentColor"), lineWidth: 1))
     }
 }
+
+struct TextFieldStyles_Previews: PreviewProvider {
+    static var previews: some View {
+        TextFieldStyle1(placeholder: "Input", textValue: .constant("Input"))
+    }
+}

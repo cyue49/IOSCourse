@@ -59,8 +59,6 @@ struct FormPageView: View {
                 
                 Text("What is your preferred temperature in celcuius?")
                 SliderStyle1(value: $user.preferredTemperature, minValue: -50, maxValue: 50, step: 1)
-                Text("\(Int(user.preferredTemperature))")
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 
                 NavigationLink(destination: DisplayInformationView(user: $user)) {
                     TextButtonStyle1(text: "Save and go to next page")
