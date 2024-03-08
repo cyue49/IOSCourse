@@ -52,8 +52,11 @@ struct FormPageView: View {
                 DropdownPickerStyle1(label: "Continent of Residence", options: continents, selected: $user.continent)
                 
                 Text("What is your preferred temperature in celcuius?")
+                SliderStyle1(value: $user.preferredTemperature, minValue: -50, maxValue: 50, step: 1)
+                Text("\(Int(user.preferredTemperature))")
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 
-                ButtonStyle1(text: "Save Information and Display on Next Page") {}
+                ButtonStyle1(text: "Save and go to next page") {}
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             .padding(20)

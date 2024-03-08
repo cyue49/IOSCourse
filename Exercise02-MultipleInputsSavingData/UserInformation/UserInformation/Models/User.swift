@@ -8,5 +8,6 @@ struct User: Identifiable {
     var likesDogs = false
     var likesGuineaPigs = false
     var likesOther = false
-    var continent = ""
+    var continent = "North America"
+    var preferredTemperature:Double = 0
 }

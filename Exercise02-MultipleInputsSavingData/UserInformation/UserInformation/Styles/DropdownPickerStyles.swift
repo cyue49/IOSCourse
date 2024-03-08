@@ -11,6 +11,7 @@ struct DropdownPickerStyle1: View {
                 Text($0)
             }
         }
+        .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .stroke(Color("PrimaryAccentColor"), lineWidth: 1))
@@ -23,4 +24,3 @@ struct DropdownPickerStyles_Previews: PreviewProvider {
         DropdownPickerStyle1(label: "Test", options: ["Option 1", "Option 2"], selected: .constant("Test"))
     }
 }
-
