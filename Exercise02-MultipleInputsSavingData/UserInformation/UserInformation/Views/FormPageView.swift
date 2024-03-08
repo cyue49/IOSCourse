@@ -56,7 +56,9 @@ struct FormPageView: View {
                 Text("\(Int(user.preferredTemperature))")
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 
-                ButtonStyle1(text: "Save and go to next page") {}
+                NavigationLink(destination: DisplayInformationView(user: $user)) {
+                    TextButtonStyle1(text: "Save and go to next page")
+                }
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             .padding(20)

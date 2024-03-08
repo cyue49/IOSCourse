@@ -11,3 +11,7 @@ struct User: Identifiable {
     var continent = "North America"
     var preferredTemperature:Double = 0
 }
+
+extension User {
+    static let sampleData: User = User(name: "Bob", ageRange: "Don't want to say", likesCats: true, likesDogs: true, likesGuineaPigs: true, likesOther: false, continent: "North America", preferredTemperature: 20)
+}
