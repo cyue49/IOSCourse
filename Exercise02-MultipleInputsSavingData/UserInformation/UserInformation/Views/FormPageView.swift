@@ -1,7 +1,10 @@
 import SwiftUI
 
 struct FormPageView: View {
-    @State var user: User = User()
+    @Binding var user: User 
+    @Environment(\.scenePhase) private var scenePhase
+    var temp: String
+    let saveAction: ()->Void
     
     var body: some View {
         let ageOptions = [
@@ -27,6 +30,9 @@ struct FormPageView: View {
         
         NavigationStack {
             VStack (alignment: .leading, spacing: 25) {
+                ScrollView(.horizontal) { // for testing
+                    Text("\(temp)")
+                }
                 Text("What is your name? (2-20 characters)")
                 TextFieldStyle1(placeholder: "Please enter your name", textValue: $user.name)
                 
@@ -64,11 +70,14 @@ struct FormPageView: View {
             .padding(20)
             Spacer()
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct FormPageView_Previews: PreviewProvider {
     static var previews: some View {
-        FormPageView()
+        FormPageView(user: .constant(User.sampleData), temp: "", saveAction: {})
     }
 }

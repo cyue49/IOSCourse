@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7827C21C2B9B563E00324D24 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827C21B2B9B563E00324D24 /* UserStore.swift */; };
 		78CFE0932B9A053E00E39271 /* UserInformationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFE0922B9A053E00E39271 /* UserInformationApp.swift */; };
 		78CFE0972B9A054100E39271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CFE0962B9A054100E39271 /* Assets.xcassets */; };
 		78CFE09A2B9A054100E39271 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CFE0992B9A054100E39271 /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7827C21B2B9B563E00324D24 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		78CFE08F2B9A053E00E39271 /* UserInformation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInformation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CFE0922B9A053E00E39271 /* UserInformationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationApp.swift; sourceTree = "<group>"; };
 		78CFE0962B9A054100E39271 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				78CFE0C92B9A317600E39271 /* User.swift */,
+				7827C21B2B9B563E00324D24 /* UserStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78CFE0CE2B9A67EA00E39271 /* RadioButtonStyles.swift in Sources */,
+				7827C21C2B9B563E00324D24 /* UserStore.swift in Sources */,
 				78CFE0C72B9A15A700E39271 /* CheckboxStyles.swift in Sources */,
 				78CFE0D62B9AB5AB00E39271 /* DisplayInformationView.swift in Sources */,
 				78CFE0C12B9A073A00E39271 /* FormPageView.swift in Sources */,
