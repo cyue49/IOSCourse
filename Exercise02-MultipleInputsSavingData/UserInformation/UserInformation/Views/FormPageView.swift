@@ -3,7 +3,7 @@ import SwiftUI
 struct FormPageView: View {
     @Binding var user: User 
     @Environment(\.scenePhase) private var scenePhase
-    var temp: String
+    var temp: String // for testing
     let saveAction: ()->Void
     
     var body: some View {
