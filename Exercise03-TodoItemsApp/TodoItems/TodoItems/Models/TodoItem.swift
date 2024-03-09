@@ -26,15 +26,7 @@ extension TodoItem {
 
 extension Date {
     init(year: Int, month: Int, day: Int) {
-        var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = day
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        
-        let date = Calendar(identifier: .gregorian).date(from: dateComponents)
+        let date = Calendar(identifier: .gregorian).date(from: DateComponents(year: year, month: month, day: day, hour: 0, minute: 0, second: 0))
         self.init(timeInterval: 0, since: date!)
     }
 }
