@@ -1,16 +1,17 @@
 import SwiftUI
 
 struct TodoItemsView: View {
+    @Binding var todoList: [TodoItem]
     @State private var isAddingItem = false
     @State private var isEdditingItem = false
     
     var body: some View {
         NavigationStack {
             VStack {
-                List {
-                    NavigationLink(destination: EditingItemView()) {
+                List($todoList) { $todoItem in
+                    NavigationLink(destination: EditingItemView(title: $todoItem.title, description: $todoItem.description)) {
                         Button(action: {}) {
-                            Text("Test")
+                            Text(todoItem.title)
                         }
                     }
                 }
@@ -49,6 +50,6 @@ struct TodoItemsView: View {
 
 struct TodoItemView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoItemsView()
+        TodoItemsView(todoList: .constant(TodoItem.sampleData))
     }
 }
