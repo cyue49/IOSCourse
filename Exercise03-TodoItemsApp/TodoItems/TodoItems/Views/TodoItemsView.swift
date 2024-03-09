@@ -9,7 +9,7 @@ struct TodoItemsView: View {
         NavigationStack {
             VStack {
                 List($todoList) { $todoItem in
-                    NavigationLink(destination: EditingItemView(title: $todoItem.title, description: $todoItem.description)) {
+                    NavigationLink(destination: EditingItemView(item: $todoItem)) {
                         Button(action: {}) {
                             Text(todoItem.title)
                         }

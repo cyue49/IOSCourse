@@ -17,6 +17,7 @@
 		781014482B9C3457002466B3 /* AddingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781014472B9C3457002466B3 /* AddingItemView.swift */; };
 		7810144A2B9C3465002466B3 /* EditingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781014492B9C3465002466B3 /* EditingItemView.swift */; };
 		7810144E2B9C3A8A002466B3 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810144D2B9C3A8A002466B3 /* TodoItem.swift */; };
+		785F3B9D2B9CF2EF0017F747 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785F3B9C2B9CF2EF0017F747 /* ButtonStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		781014472B9C3457002466B3 /* AddingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingItemView.swift; sourceTree = "<group>"; };
 		781014492B9C3465002466B3 /* EditingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingItemView.swift; sourceTree = "<group>"; };
 		7810144D2B9C3A8A002466B3 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		785F3B9C2B9CF2EF0017F747 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		781014432B9C2A7B002466B3 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				785F3B9C2B9CF2EF0017F747 /* ButtonStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781014192B9C2999002466B3 /* TodoItemsApp.swift in Sources */,
+				785F3B9D2B9CF2EF0017F747 /* ButtonStyles.swift in Sources */,
 				781014482B9C3457002466B3 /* AddingItemView.swift in Sources */,
 				7810144A2B9C3465002466B3 /* EditingItemView.swift in Sources */,
 				7810144E2B9C3A8A002466B3 /* TodoItem.swift in Sources */,

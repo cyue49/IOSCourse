@@ -1,21 +1,22 @@
 import SwiftUI
 
 struct EditingItemView: View {
-    @Binding var title: String
-    @Binding var description: String
+    @Binding var item: TodoItem
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text(description)
+                Text(item.description)
+                Text(item.dueDate.description)
+                Text(String(item.completed))
             }
-            .navigationBarTitle(title, displayMode: .inline)
+            .navigationBarTitle(item.title, displayMode: .inline)
         }
     }
 }
 
 struct EditingItemView_Previews: PreviewProvider {
     static var previews: some View {
-        EditingItemView(title: .constant("Exam"), description: .constant("Review for exam"))
+        EditingItemView(item: .constant(TodoItem.sampleData[0]))
     }
 }
