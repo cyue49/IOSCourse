@@ -17,6 +17,10 @@ struct TodoItem: Identifiable {
 }
 
 extension TodoItem {
+    static var emptyItem: TodoItem {
+        TodoItem(title: "", description: "", dueDate: Date(), completed: false)
+    }
+    
     static let sampleData: [TodoItem] =
     [
         TodoItem(title: "Math Exam", description: "Review for math exam", dueDate: Date(year: 2024, month: 6, day: 20), completed: false),

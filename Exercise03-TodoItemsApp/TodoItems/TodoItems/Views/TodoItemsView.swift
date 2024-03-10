@@ -10,8 +10,13 @@ struct TodoItemsView: View {
             VStack {
                 List($todoList) { $todoItem in
                     NavigationLink(destination: EditingItemView(item: $todoItem)) {
-                        Button(action: {}) {
-                            Text(todoItem.title)
+                        Grid {
+                            GridRow {
+                                CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
+                                Spacer()
+                                Text("temp")
+                                    .foregroundStyle(.gray)
+                            }
                         }
                     }
                 }
@@ -27,22 +32,7 @@ struct TodoItemsView: View {
                 }
             }
             .sheet(isPresented: $isAddingItem) {
-                NavigationStack {
-                    AddingItemView()
-                        .navigationBarTitle("Adding Items", displayMode: .inline)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("Cancel") {
-                                    isAddingItem = false
-                                }
-                            }
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Done") {
-                                    isAddingItem = false
-                                }
-                            }
-                        }
-                }
+                NewItemSheetView(todoList: $todoList, isAddingItem: $isAddingItem)
             }
         }
     }
