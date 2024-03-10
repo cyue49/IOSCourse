@@ -8,7 +8,9 @@ struct EditingItemView: View {
                 AddEditItemView(item: $item)
                 Grid(alignment: .center, horizontalSpacing: 10) {
                     GridRow {
-                        ButtonStyle3(text: "Delete task", clicked: {})
+                        ButtonStyle3(text: "Delete task", clicked: {
+                            item.deleted = true
+                        })
                         ButtonStyle1(text: "Save changes", clicked: {})
                     }
                 }

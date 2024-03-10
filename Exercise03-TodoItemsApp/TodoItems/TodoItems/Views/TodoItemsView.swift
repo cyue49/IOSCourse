@@ -23,7 +23,7 @@ struct TodoItemsView: View {
                 List {
                     Section(header: Text("Upcoming")) {
                         ForEach($todoList) { $todoItem in
-                            if (!todoItem.completed && todoItem.dueDate > Date()) {
+                            if (!todoItem.completed && !todoItem.deleted && todoItem.dueDate > Date()) {
                                 NavigationLink(destination: EditingItemView(item: $todoItem)) {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
@@ -37,7 +37,7 @@ struct TodoItemsView: View {
                     }
                     Section(header: Text("Overdue")) {
                         ForEach($todoList) { $todoItem in
-                            if (!todoItem.completed && todoItem.dueDate < Date()) {
+                            if (!todoItem.completed && !todoItem.deleted && todoItem.dueDate < Date()) {
                                 NavigationLink(destination: EditingItemView(item: $todoItem)) {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
