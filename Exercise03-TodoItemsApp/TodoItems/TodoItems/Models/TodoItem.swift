@@ -24,7 +24,8 @@ extension TodoItem {
     static let sampleData: [TodoItem] =
     [
         TodoItem(title: "Math Exam", description: "Review for math exam", dueDate: Date(year: 2024, month: 6, day: 20), completed: false),
-        TodoItem(title: "House Cleaning", description: "Wash the dishes and do laundry", dueDate: Date(year: 2024, month: 5, day: 12), completed: false)
+        TodoItem(title: "House Cleaning", description: "Wash the dishes and do laundry", dueDate: Date(year: 2024, month: 5, day: 12), completed: false),
+        TodoItem(title: "Reply Email", description: "Reply to work email", dueDate: Date(year: 2024, month: 3, day: 8), completed: false)
     ]
 }
 

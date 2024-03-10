@@ -4,7 +4,6 @@ struct EditingItemView: View {
     @Binding var item: TodoItem
     
     var body: some View {
-        NavigationStack {
             VStack (alignment: .leading, spacing: 20) {
                 AddEditItemView(item: $item)
                 Grid(alignment: .center, horizontalSpacing: 10) {
@@ -13,12 +12,10 @@ struct EditingItemView: View {
                         ButtonStyle1(text: "Save changes", clicked: {})
                     }
                 }
-                Spacer()
             }
             .padding()
             .navigationBarTitle(item.title, displayMode: .inline)
         }
-    }
 }
 
 struct EditingItemView_Previews: PreviewProvider {
