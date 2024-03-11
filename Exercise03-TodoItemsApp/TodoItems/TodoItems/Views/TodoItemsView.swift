@@ -8,22 +8,10 @@ struct TodoItemsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-//                List($todoList) { $todoItem in
-//                    if (!todoItem.completed) {
-//                        NavigationLink(destination: EditingItemView(item: $todoItem)) {
-//                                HStack {
-//                                    CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
-//                                    Spacer()
-//                                    Text("temp")
-//                                        .foregroundStyle(.gray)
-//                                }
-//                        }
-//                    }
-//                }
                 List {
                     Section(header: Text("Upcoming")) {
                         ForEach($todoList) { $todoItem in
-                            if (!todoItem.completed && !todoItem.deleted && todoItem.dueDate > Date()) {
+                            if (!todoItem.completed && todoItem.dueDate > Date()) {
                                 NavigationLink(destination: EditingItemView(item: $todoItem)) {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
@@ -37,7 +25,7 @@ struct TodoItemsView: View {
                     }
                     Section(header: Text("Overdue")) {
                         ForEach($todoList) { $todoItem in
-                            if (!todoItem.completed && !todoItem.deleted && todoItem.dueDate < Date()) {
+                            if (!todoItem.completed && todoItem.dueDate < Date()) {
                                 NavigationLink(destination: EditingItemView(item: $todoItem)) {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
@@ -60,6 +48,10 @@ struct TodoItemsView: View {
                         Image(systemName: "plus")
                     }
                 }
+            }.onAppear(){
+                todoList.removeAll(where: {
+                    $0.deleted == true
+                })
             }
             .sheet(isPresented: $isAddingItem) {
                 NewItemSheetView(todoList: $todoList, isAddingItem: $isAddingItem)
