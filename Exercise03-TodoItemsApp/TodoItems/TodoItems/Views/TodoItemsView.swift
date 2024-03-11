@@ -5,6 +5,9 @@ struct TodoItemsView: View {
     @State private var isAddingItem = false
     @State private var isEdditingItem = false
     
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: ()->Void
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -16,7 +19,7 @@ struct TodoItemsView: View {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
                                             Spacer()
-                                            Text(todoItem.dueDate.description.prefix(10))
+                                            Text(todoItem.dueDate.formatted(date: .abbreviated, time: .omitted))
                                                 .foregroundStyle(.gray)
                                         }
                                 }
@@ -30,7 +33,7 @@ struct TodoItemsView: View {
                                         HStack {
                                             CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
                                             Spacer()
-                                            Text(todoItem.dueDate.description.prefix(10))
+                                            Text(todoItem.dueDate.formatted(date: .abbreviated, time: .omitted))
                                                 .foregroundStyle(.red)
                                         }
                                 }
@@ -48,7 +51,8 @@ struct TodoItemsView: View {
                         Image(systemName: "plus")
                     }
                 }
-            }.onAppear(){
+            }
+            .onAppear(){
                 todoList.removeAll(where: {
                     $0.deleted == true
                 })
@@ -56,12 +60,15 @@ struct TodoItemsView: View {
             .sheet(isPresented: $isAddingItem) {
                 NewItemSheetView(todoList: $todoList, isAddingItem: $isAddingItem)
             }
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
+            }
         }
     }
 }
 
 struct TodoItemView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoItemsView(todoList: .constant(TodoItem.sampleData))
+        TodoItemsView(todoList: .constant(TodoItem.sampleData), saveAction: {})
     }
 }

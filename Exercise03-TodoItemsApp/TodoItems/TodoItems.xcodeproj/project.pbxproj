@@ -22,6 +22,7 @@
 		785F3BA32B9D2F1E0017F747 /* NewItemSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785F3BA22B9D2F1E0017F747 /* NewItemSheetView.swift */; };
 		785F3BA52B9D34640017F747 /* AddEditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785F3BA42B9D34640017F747 /* AddEditItemView.swift */; };
 		785F3BA72B9D37470017F747 /* CheckboxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785F3BA62B9D37470017F747 /* CheckboxStyles.swift */; };
+		78D378882B9F6C0C0056DF4E /* TodoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378872B9F6C0C0056DF4E /* TodoItemStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		785F3BA22B9D2F1E0017F747 /* NewItemSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemSheetView.swift; sourceTree = "<group>"; };
 		785F3BA42B9D34640017F747 /* AddEditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditItemView.swift; sourceTree = "<group>"; };
 		785F3BA62B9D37470017F747 /* CheckboxStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyles.swift; sourceTree = "<group>"; };
+		78D378872B9F6C0C0056DF4E /* TodoItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				7810144D2B9C3A8A002466B3 /* TodoItem.swift */,
+				78D378872B9F6C0C0056DF4E /* TodoItemStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				785F3BA12B9CFEE70017F747 /* DatePickerStyles.swift in Sources */,
 				785F3B9D2B9CF2EF0017F747 /* ButtonStyles.swift in Sources */,
 				785F3B9F2B9CFC8A0017F747 /* TextFieldWithLabel.swift in Sources */,
+				78D378882B9F6C0C0056DF4E /* TodoItemStore.swift in Sources */,
 				785F3BA32B9D2F1E0017F747 /* NewItemSheetView.swift in Sources */,
 				7810144A2B9C3465002466B3 /* EditingItemView.swift in Sources */,
 				7810144E2B9C3A8A002466B3 /* TodoItem.swift in Sources */,
