@@ -3,6 +3,7 @@ import SwiftUI
 struct EditingItemView: View {
     @Binding var item: TodoItem
     @Environment(\.dismiss) var dismiss
+    @State var initialItem: TodoItem = TodoItem.emptyItem
     
     var body: some View {
             VStack (alignment: .leading, spacing: 20) {
@@ -21,6 +22,12 @@ struct EditingItemView: View {
             }
             .padding()
             .navigationBarTitle(item.title, displayMode: .inline)
+            .onAppear(){
+                initialItem = item
+            }
+            .onDisappear() {
+                item = initialItem 
+            }
         }
 }
 
