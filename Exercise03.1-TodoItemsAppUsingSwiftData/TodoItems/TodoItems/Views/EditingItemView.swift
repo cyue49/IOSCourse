@@ -7,6 +7,7 @@ struct EditingItemView: View {
     
     var item: TodoDataItem
     @State var itemCopy: TodoDataItem = TodoDataItem.emptyItem
+    @State private var showConfirmDelete = false
     
     var body: some View {
         VStack (alignment: .leading, spacing: 20) {
@@ -14,9 +15,17 @@ struct EditingItemView: View {
             Grid(alignment: .center, horizontalSpacing: 10) {
                 GridRow {
                     ButtonStyle2(text: "Delete task", clicked: {
-                        deleteItem(item: item)
-                        dismiss()
+                        showConfirmDelete.toggle()
                     })
+                    .confirmationDialog(
+                        "Delete this item?",
+                        isPresented: $showConfirmDelete,
+                        titleVisibility: .visible) {
+                            Button("Yes", role: .destructive) {
+                                deleteItem(item: item)
+                                dismiss()
+                            }
+                        }
                     ButtonStyle1(text: "Save changes", clicked: {
                         saveChanges()
                         dismiss()

@@ -19,11 +19,11 @@ struct TodoItemsView: View {
                                 }
                             }
                         }
-                        .onDelete { items in
-                            for i in items {
-                                deleteItem(item: todoList[i])
-                            }
-                        }
+//                        .onDelete { items in
+//                            for i in items {
+//                                deleteItem(item: todoList[i])
+//                            }
+//                        }
                     }
                     Section(header: Text("Overdue")) {
                         ForEach(todoList) { todoItem in
@@ -33,11 +33,11 @@ struct TodoItemsView: View {
                                 }
                             }
                         }
-                        .onDelete { items in
-                            for i in items {
-                                deleteItem(item: todoList[i])
-                            }
-                        }
+//                        .onDelete { items in
+//                            for i in items {
+//                                deleteItem(item: todoList[i])
+//                            }
+//                        }
                     }
                 }
             }
@@ -64,18 +64,14 @@ struct TodoItemsView: View {
         }
     }
     
-    func deleteItem(item: TodoDataItem){
-        context.delete(item)
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
     func clearTodoList() {
         for listItem in todoList {
-            deleteItem(item: listItem)
+            context.delete(listItem)
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }

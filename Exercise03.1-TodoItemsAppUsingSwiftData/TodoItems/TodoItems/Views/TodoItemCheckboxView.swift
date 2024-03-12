@@ -25,6 +25,23 @@ struct TodoItemCheckboxView: View {
             Text(item.dueDate.formatted(date: .abbreviated, time: .omitted))
                 .foregroundStyle(.gray)
         }
+        .swipeActions {
+            Button(
+                role: .destructive,
+                action: { deleteItem(item: item) }
+            ) {
+                Image(systemName: "trash")
+            }
+        }
+    }
+    
+    func deleteItem(item: TodoDataItem){
+        context.delete(item)
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
