@@ -8,12 +8,20 @@ struct TodoItemsView: View {
     @State private var isAddingItem = false
     @State private var showConfirmDelete = false
     
+    @State private var searchText = ""
+    var filteredTodoList: [TodoDataItem] {
+        guard !searchText.isEmpty else { return todoList }
+        return todoList.filter { item in
+            item.title.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
                 List {
                     Section(header: Text("Upcoming")) {
-                        ForEach(todoList) { todoItem in
+                        ForEach(filteredTodoList) { todoItem in
                             if (!todoItem.completed && todoItem.dueDate > Date()) {
                                 NavigationLink(destination: EditingItemView(item: todoItem)) {
                                     TodoItemCheckboxView(item: todoItem)
@@ -27,7 +35,7 @@ struct TodoItemsView: View {
 //                        }
                     }
                     Section(header: Text("Overdue")) {
-                        ForEach(todoList) { todoItem in
+                        ForEach(filteredTodoList) { todoItem in
                             if (!todoItem.completed && todoItem.dueDate < Date()) {
                                 NavigationLink(destination: EditingItemView(item: todoItem)) {
                                     TodoItemCheckboxView(item: todoItem)
@@ -71,6 +79,7 @@ struct TodoItemsView: View {
                 NewItemSheetView(isAddingItem: $isAddingItem)
             }
         }
+        .searchable(text: $searchText)
     }
     
     func clearTodoList() {
