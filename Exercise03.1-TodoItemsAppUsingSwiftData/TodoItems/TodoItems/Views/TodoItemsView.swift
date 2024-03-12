@@ -6,6 +6,7 @@ struct TodoItemsView: View {
     
     @Query private var  todoList: [TodoDataItem]
     @State private var isAddingItem = false
+    @State private var showConfirmDelete = false
     
     var body: some View {
         NavigationStack {
@@ -45,10 +46,18 @@ struct TodoItemsView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button (action: {
-                        clearTodoList()
+                        showConfirmDelete.toggle()
                     }) {
                         Text("Clear")
                     }
+                    .confirmationDialog(
+                        "Clear all todo items?",
+                        isPresented: $showConfirmDelete,
+                        titleVisibility: .visible) {
+                            Button("Yes", role: .destructive) {
+                                clearTodoList()
+                            }
+                        }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button (action: {
