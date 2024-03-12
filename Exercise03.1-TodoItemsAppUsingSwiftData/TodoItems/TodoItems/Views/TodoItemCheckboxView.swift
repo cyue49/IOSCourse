@@ -28,8 +28,8 @@ struct TodoItemCheckboxView: View {
     }
 }
 
-//struct TodoItemCheckbox_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TodoItemCheckboxView(item: TodoDataItem.sampleData[0])
-//    }
-//}
+struct TodoItemCheckbox_Previews: PreviewProvider {
+    static var previews: some View {
+        TodoItemCheckboxView(item: TodoDataItem.sampleData[0])
+    }
+}

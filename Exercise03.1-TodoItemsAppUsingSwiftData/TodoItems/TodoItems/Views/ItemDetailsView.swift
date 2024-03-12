@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddEditItemView: View {
+struct ItemDetailsView: View {
     @Binding var item: TodoDataItem
     
     var body: some View {
@@ -13,8 +13,8 @@ struct AddEditItemView: View {
     }
 }
 
-//struct AddingItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddEditItemView(item: .constant(TodoItem.sampleData[0]))
-//    }
-//}
+struct ItemDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemDetailsView(item: .constant(TodoDataItem.sampleData[0]))
+    }
+}

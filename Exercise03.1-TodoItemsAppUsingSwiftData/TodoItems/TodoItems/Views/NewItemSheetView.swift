@@ -9,7 +9,7 @@ struct NewItemSheetView: View {
     
     var body: some View {
         NavigationStack {
-            AddEditItemView(item: $newItem)
+            ItemDetailsView(item: $newItem)
                 .padding()
                 .navigationBarTitle("Adding Items", displayMode: .inline)
                 .toolbar {
@@ -38,8 +38,8 @@ struct NewItemSheetView: View {
     }
 }
 
-//struct NewItemSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewItemSheetView(todoList: .constant(TodoItem.sampleData), isAddingItem: .constant(true))
-//    }
-//}
+struct NewItemSheet_Previews: PreviewProvider {
+    static var previews: some View {
+        NewItemSheetView(isAddingItem: .constant(true))
+    }
+}

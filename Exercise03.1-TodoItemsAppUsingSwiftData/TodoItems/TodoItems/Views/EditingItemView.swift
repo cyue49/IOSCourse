@@ -10,7 +10,7 @@ struct EditingItemView: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: 20) {
-            AddEditItemView(item: $itemCopy)
+            ItemDetailsView(item: $itemCopy)
             Grid(alignment: .center, horizontalSpacing: 10) {
                 GridRow {
                     ButtonStyle2(text: "Delete task", clicked: {
@@ -57,8 +57,8 @@ struct EditingItemView: View {
     }
 }
 
-//struct EditingItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditingItemView(item: .constant(TodoItem.sampleData[0]))
-//    }
-//}
+struct EditingItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditingItemView(item: TodoDataItem.sampleData[0])
+    }
+}
