@@ -14,7 +14,6 @@
 		78D378B12B9FB7FF0056DF4E /* TodoItemsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378B02B9FB7FF0056DF4E /* TodoItemsUITests.swift */; };
 		78D378B32B9FB7FF0056DF4E /* TodoItemsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378B22B9FB7FF0056DF4E /* TodoItemsUITestsLaunchTests.swift */; };
 		78D378C32B9FB9BC0056DF4E /* TextFieldWithLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378C22B9FB9BC0056DF4E /* TextFieldWithLabelStyles.swift */; };
-		78D378C52B9FBA760056DF4E /* CheckboxStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378C42B9FBA760056DF4E /* CheckboxStyles.swift */; };
 		78D378C72B9FBA970056DF4E /* DatePickerStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378C62B9FBA970056DF4E /* DatePickerStyles.swift */; };
 		78D378C92B9FBAC90056DF4E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378C82B9FBAC90056DF4E /* ButtonStyles.swift */; };
 		78D378CB2B9FCEC90056DF4E /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378CA2B9FCEC90056DF4E /* ItemDetailsView.swift */; };
@@ -22,6 +21,8 @@
 		78D378CF2B9FCFDC0056DF4E /* TodoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378CE2B9FCFDC0056DF4E /* TodoItemsView.swift */; };
 		78D378D12B9FCFFD0056DF4E /* NewItemSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378D02B9FCFFD0056DF4E /* NewItemSheetView.swift */; };
 		78D378D32B9FD01E0056DF4E /* EditingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378D22B9FD01E0056DF4E /* EditingItemView.swift */; };
+		78D378D52B9FDAEB0056DF4E /* TodoItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378D42B9FDAEB0056DF4E /* TodoItemModel.swift */; };
+		78D378D72B9FFBFD0056DF4E /* TodoItemCheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D378D62B9FFBFD0056DF4E /* TodoItemCheckboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		78D378B02B9FB7FF0056DF4E /* TodoItemsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemsUITests.swift; sourceTree = "<group>"; };
 		78D378B22B9FB7FF0056DF4E /* TodoItemsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78D378C22B9FB9BC0056DF4E /* TextFieldWithLabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithLabelStyles.swift; sourceTree = "<group>"; };
-		78D378C42B9FBA760056DF4E /* CheckboxStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyles.swift; sourceTree = "<group>"; };
 		78D378C62B9FBA970056DF4E /* DatePickerStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerStyles.swift; sourceTree = "<group>"; };
 		78D378C82B9FBAC90056DF4E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		78D378CA2B9FCEC90056DF4E /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		78D378CE2B9FCFDC0056DF4E /* TodoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemsView.swift; sourceTree = "<group>"; };
 		78D378D02B9FCFFD0056DF4E /* NewItemSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemSheetView.swift; sourceTree = "<group>"; };
 		78D378D22B9FD01E0056DF4E /* EditingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingItemView.swift; sourceTree = "<group>"; };
+		78D378D42B9FDAEB0056DF4E /* TodoItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemModel.swift; sourceTree = "<group>"; };
+		78D378D62B9FFBFD0056DF4E /* TodoItemCheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCheckboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				78D378CC2B9FCEEE0056DF4E /* TodoItem.swift */,
+				78D378D42B9FDAEB0056DF4E /* TodoItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				78D378CE2B9FCFDC0056DF4E /* TodoItemsView.swift */,
 				78D378D02B9FCFFD0056DF4E /* NewItemSheetView.swift */,
 				78D378D22B9FD01E0056DF4E /* EditingItemView.swift */,
+				78D378D62B9FFBFD0056DF4E /* TodoItemCheckboxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				78D378C22B9FB9BC0056DF4E /* TextFieldWithLabelStyles.swift */,
-				78D378C42B9FBA760056DF4E /* CheckboxStyles.swift */,
 				78D378C62B9FBA970056DF4E /* DatePickerStyles.swift */,
 				78D378C82B9FBAC90056DF4E /* ButtonStyles.swift */,
 			);
@@ -309,11 +312,12 @@
 				78D378CF2B9FCFDC0056DF4E /* TodoItemsView.swift in Sources */,
 				78D378CB2B9FCEC90056DF4E /* ItemDetailsView.swift in Sources */,
 				78D378C72B9FBA970056DF4E /* DatePickerStyles.swift in Sources */,
+				78D378D72B9FFBFD0056DF4E /* TodoItemCheckboxView.swift in Sources */,
 				78D378C92B9FBAC90056DF4E /* ButtonStyles.swift in Sources */,
 				78D378D12B9FCFFD0056DF4E /* NewItemSheetView.swift in Sources */,
 				78D378D32B9FD01E0056DF4E /* EditingItemView.swift in Sources */,
 				78D378962B9FB7FB0056DF4E /* TodoItemsApp.swift in Sources */,
-				78D378C52B9FBA760056DF4E /* CheckboxStyles.swift in Sources */,
+				78D378D52B9FDAEB0056DF4E /* TodoItemModel.swift in Sources */,
 				78D378C32B9FB9BC0056DF4E /* TextFieldWithLabelStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

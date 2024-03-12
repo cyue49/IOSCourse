@@ -1,13 +1,15 @@
 import SwiftUI
+import SwiftData
 
 struct NewItemSheetView: View {
-    @Binding var todoList: [TodoItem]
+    @Environment(\.modelContext) private var context
+    
     @Binding var isAddingItem: Bool
-    @State var newTask: TodoItem = TodoItem.emptyItem
+    @State var newItem: TodoDataItem = TodoDataItem.emptyItem
     
     var body: some View {
         NavigationStack {
-            AddEditItemView(item: $newTask)
+            AddEditItemView(item: $newItem)
                 .padding()
                 .navigationBarTitle("Adding Items", displayMode: .inline)
                 .toolbar {
@@ -18,17 +20,26 @@ struct NewItemSheetView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") {
-                            todoList.append(newTask)
+                            addItem(item: newItem)
                             isAddingItem = false
                         }
                     }
                 }
         }
     }
-}
-
-struct NewItemSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        NewItemSheetView(todoList: .constant(TodoItem.sampleData), isAddingItem: .constant(true))
+    
+    func addItem(item: TodoDataItem) {
+        context.insert(newItem)
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
+
+//struct NewItemSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewItemSheetView(todoList: .constant(TodoItem.sampleData), isAddingItem: .constant(true))
+//    }
+//}

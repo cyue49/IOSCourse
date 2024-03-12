@@ -1,38 +1,30 @@
 import SwiftUI
+import SwiftData
 
 struct TodoItemsView: View {
-    @Binding var todoList: [TodoItem]
+    @Environment(\.modelContext) private var context
+    
+    @Query private var  todoList: [TodoDataItem]
     @State private var isAddingItem = false
-    @State private var isEdditingItem = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
                     Section(header: Text("Upcoming")) {
-                        ForEach($todoList) { $todoItem in
+                        ForEach(todoList) { todoItem in
                             if (!todoItem.completed && todoItem.dueDate > Date()) {
-                                NavigationLink(destination: EditingItemView(item: $todoItem)) {
-                                        HStack {
-                                            CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
-                                            Spacer()
-                                            Text(todoItem.dueDate.formatted(date: .abbreviated, time: .omitted))
-                                                .foregroundStyle(.gray)
-                                        }
+                                NavigationLink(destination: EditingItemView(item: todoItem)) {
+                                    TodoItemCheckboxView(item: todoItem)
                                 }
                             }
                         }
                     }
                     Section(header: Text("Overdue")) {
-                        ForEach($todoList) { $todoItem in
+                        ForEach(todoList) { todoItem in
                             if (!todoItem.completed && todoItem.dueDate < Date()) {
-                                NavigationLink(destination: EditingItemView(item: $todoItem)) {
-                                        HStack {
-                                            CheckboxStyle1(label: todoItem.title, checked: $todoItem.completed)
-                                            Spacer()
-                                            Text(todoItem.dueDate.formatted(date: .abbreviated, time: .omitted))
-                                                .foregroundStyle(.red)
-                                        }
+                                NavigationLink(destination: EditingItemView(item: todoItem)) {
+                                    TodoItemCheckboxView(item: todoItem)
                                 }
                             }
                         }
@@ -49,20 +41,15 @@ struct TodoItemsView: View {
                     }
                 }
             }
-            .onAppear(){
-                todoList.removeAll(where: {
-                    $0.deleted == true
-                })
-            }
             .sheet(isPresented: $isAddingItem) {
-                NewItemSheetView(todoList: $todoList, isAddingItem: $isAddingItem)
+                NewItemSheetView(isAddingItem: $isAddingItem)
             }
         }
     }
 }
 
-struct TodoItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoItemsView(todoList: .constant(TodoItem.sampleData))
-    }
-}
+//struct TodoItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoItemsView(todoList: .constant(TodoItem.sampleData))
+//    }
+//}
