@@ -4,6 +4,7 @@ struct EditingItemView: View {
     @Binding var item: TodoItem
     @Environment(\.dismiss) var dismiss
     @State var initialItem: TodoItem = TodoItem.emptyItem
+    @State var edited:Bool = false
     
     var body: some View {
             VStack (alignment: .leading, spacing: 20) {
@@ -15,6 +16,7 @@ struct EditingItemView: View {
                             dismiss()
                         })
                         ButtonStyle1(text: "Save changes", clicked: {
+                            edited = true
                             dismiss()
                         })
                     }
@@ -26,7 +28,9 @@ struct EditingItemView: View {
                 initialItem = item
             }
             .onDisappear() {
-                item = initialItem 
+                if (!edited) {
+                    item = initialItem
+                }
             }
         }
 }
