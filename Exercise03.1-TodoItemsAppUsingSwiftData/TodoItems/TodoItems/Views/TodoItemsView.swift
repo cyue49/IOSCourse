@@ -43,6 +43,13 @@ struct TodoItemsView: View {
             }
             .navigationBarTitle("Todo Items", displayMode: .inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button (action: {
+                        clearTodoList()
+                    }) {
+                        Text("Clear")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button (action: {
                         isAddingItem = true
@@ -63,6 +70,12 @@ struct TodoItemsView: View {
             try context.save()
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func clearTodoList() {
+        for listItem in todoList {
+            deleteItem(item: listItem)
         }
     }
 }
